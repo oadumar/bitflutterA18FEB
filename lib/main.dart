@@ -1,9 +1,12 @@
 import 'package:cursoflutter/view/loginpage.dart';
 import 'package:cursoflutter/view/news_page.dart';
 import 'package:flutter/material.dart';
+import 'package:cursoflutter/utils/firebaseController.dart' as firebaseAuth;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(CursoFlutter());
+  firebaseAuth.Initializing();
 }
 
 class CursoFlutter extends StatefulWidget {

@@ -1,5 +1,7 @@
+import 'package:cursoflutter/utils/firebaseController.dart' as firebaseAuth;
 import 'package:cursoflutter/utils/resize.dart';
-import 'package:cursoflutter/utils/styles.dart';
+
+//  import 'package:cursoflutter/utils/styles.dart';
 import 'package:cursoflutter/view/widgets/app_button.dart';
 import 'package:cursoflutter/view/widgets/app_textfield.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,11 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
+  bool logButton = false;
+  bool eyePass = false;
+  TextEditingController _textEdControlEmail = new TextEditingController();
+  TextEditingController _textEdControlPsw = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var _height = MediaQuery.of(context).size.height;
@@ -114,6 +121,12 @@ class _LoginpageState extends State<Loginpage> {
                         height: 15,
                       ),
 
+                      /*
+                      27FEB2021.
+                      Widget para anclar el campo de texto desde un módelo definido.
+                      En el ejercio está ubicado en view/widgets/app_texfield.dart
+                      No se comenta la importación de la librería porque se deja un campo con modelo y otro sin modelo.
+                      Se hace para facilitar el seguimiento al curso con tutor original.
                       Align(
                         alignment: Alignment.center,
                         child: BitTextField(
@@ -121,6 +134,23 @@ class _LoginpageState extends State<Loginpage> {
                           icon: Icon(
                             Icons.person,
                             color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                      */
+
+                      Align(
+                        alignment: Alignment.center,
+                        child: TextField(
+                          controller: _textEdControlEmail,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.person),
+                            hintText: 'Usuario',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            focusColor: Colors.black,
                           ),
                         ),
                       ),
@@ -132,6 +162,7 @@ class _LoginpageState extends State<Loginpage> {
                       Align(
                         alignment: Alignment.center,
                         child: BitTextField(
+                          controller: _textEdControlPsw,
                           hintText: 'Password',
                           icon: Icon(
                             Icons.lock,
@@ -157,6 +188,13 @@ class _LoginpageState extends State<Loginpage> {
                         height: 15,
                       ),
 
+                      /*
+                      27FEB2021.
+                      Widget para anclar el botón desde un módelo definido.
+                      En el ejercio está ubicado en view/widgets/app_button.dart
+                      No se comenta la importación de la librería porque se deja un botón con modelo y otro sin modelo.
+                      Se hace para facilitar el seguimiento al curso con tutor original.
+
                       Align(
                         alignment: Alignment.center,
                         child: BitButton(
@@ -165,6 +203,52 @@ class _LoginpageState extends State<Loginpage> {
                           fontSize: 20,
                         ),
                       )
+                      */
+                      Align(
+                        alignment: Alignment.center,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(50),
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                blurRadius: 20,
+                              ),
+                            ],
+                          ),
+                          child: FlatButton(
+                            minWidth: 200,
+                            child: Text(
+                              'LOGIN',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                logButton = !logButton;
+
+                                if (_textEdControlEmail.text.isEmpty ||
+                                    _textEdControlPsw.text.isEmpty) {
+                                  print("VACIO");
+                                } else {
+                                  logButton = !logButton;
+                                  firebaseAuth.signIn(
+                                    email: _textEdControlEmail.text,
+                                    password: _textEdControlPsw.text,
+                                  );
+                                  firebaseAuth.stateFirebase(context);
+                                }
+                              });
+                            },
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),

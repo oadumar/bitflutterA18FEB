@@ -1,7 +1,7 @@
 import 'package:cursoflutter/data/apiService.dart';
 import 'package:cursoflutter/presenter/build_itemlist.dart';
 import 'package:flutter/material.dart';
-import '../utils/styles.dart';
+//  import '../utils/styles.dart';
 import '../view/widgets/dialog_button.dart';
 
 class BuildView extends StatelessWidget {
@@ -30,7 +30,8 @@ class BuildView extends StatelessWidget {
                             print(news.title);
                             showDialog(
                               context: context,
-                              barrierDismissible: false,  //  no cierra el modal hasta que se le instruya que lo haga.
+                              barrierDismissible:
+                                  false, //  no cierra el modal hasta que se le instruya que lo haga.
                               builder: (_) => AlertDialog(
                                 //  title: Text('Confirmación'),  // Para mostrar el título del alerta
                                 content: Text(
@@ -41,7 +42,6 @@ class BuildView extends StatelessWidget {
                                     onPressed: () => Navigator.pop(context),
                                     ancho: 90.0,
                                   ),
-
                                   DialogButton(
                                     texto: 'Si',
                                     onPressed: () {},

@@ -16,12 +16,12 @@
         "source": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\OmarDuranM\\AndroidStudioProjects\\bitflutter\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
